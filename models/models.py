@@ -28,6 +28,14 @@ class recetas(models.Model):
     ingredientes = fields.Text()
     anotaciones = fields.Text()
 
+class ingredientes(models.Model):
+    _name = 'recetas.ingredientes'
+
+    name = fields.Char()
+    id = fields.Char()
+    categoria=fields.Char()
+    proveedor=fields.Char()
+
 #
 #     @api.depends('value')
 #     def _value_pc(self):
