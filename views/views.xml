@@ -15,16 +15,41 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="recetas.view_form_recetas">
+      <field name="name">Recetingas</field>
+      <field name="model">recetas.recetas</field>
+      <field name="arch" type="xml">
+      <form string="Recetas formulario">
+        <sheet>
+          <group colspan="2">
 
-    <!-- actions opening views on models -->
+            <group>
+              <separator string="Datos generales" colspan="2"/>
+                <field name="name" string="Nom" required="1"/>
+                <field name="description" string="Descripcion" required="1"/>
+                <field name="dateAdded" string="Añadido el" required="1"/>
+            </group>
 
+            <group>
+              <separator string="Detalles" colspan="2"/>
+                <field name="name" string="Nom" required="1"/>
+                <field name="steps" string="Pasos a seguir" required="1"/>
+                <field name="vegano" string="Vegano" required="1"/>
+                <field name="celiaco" string="Celíaco" required="1"/>
+            </group>
+
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+
+   <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="recetas.action_window">
-      <field name="name">recetasform</field>
+      <field name="name">Recetingas</field>
       <field name="res_model">recetas.recetas</field>
       <field name="view_mode">tree,form</field>
-
-  
-
     </record>
 
     <!-- server action to the one above -->
@@ -45,11 +70,12 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="recetas" id="recetas.menu_root"/>
+    <menuitem name="Cosas de recetas" id="recetas.menu_root"/>
 
     <!-- menu categories -->
 
     <menuitem name="Recetas" id="recetas.menu_1" parent="recetas.menu_root"/>
+    <menuitem name="Ingredientes" id="recetas.menu_2" parent="recetas.menu_root"/>
 
     <!-- actions -->
 
