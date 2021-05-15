@@ -6,7 +6,7 @@
         Módulo para gestionar recetingas""",
 
     'description': """
-        Aquí está toda la información sobre recetas de cocina y cosingas relacionadas con esta. Se pueden hacer cosas con estas cosingas
+        Aquí está toda la información sobre recetas de cocina y cosingas relacionadas con esta. Se puede hacer cosas con estas cosingas
     """,
 
     'author': "Naomi",
