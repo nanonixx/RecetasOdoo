@@ -17,13 +17,15 @@
 
 
     <!-- actions opening views on models -->
-<!--
+
     <record model="ir.actions.act_window" id="recetas.action_window">
-      <field name="name">recetas window</field>
+      <field name="name">recetasform</field>
       <field name="res_model">recetas.recetas</field>
       <field name="view_mode">tree,form</field>
+
+  
+
     </record>
--->
 
     <!-- server action to the one above -->
 <!--
@@ -42,20 +44,17 @@
 -->
 
     <!-- Top menu item -->
-<!--
+
     <menuitem name="recetas" id="recetas.menu_root"/>
--->
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="recetas.menu_1" parent="recetas.menu_root"/>
-    <menuitem name="Menu 2" id="recetas.menu_2" parent="recetas.menu_root"/>
--->
+
+    <menuitem name="Recetas" id="recetas.menu_1" parent="recetas.menu_root"/>
+
     <!-- actions -->
-<!--
+
     <menuitem name="List" id="recetas.menu_1_list" parent="recetas.menu_1"
               action="recetas.action_window"/>
-    <menuitem name="Server to list" id="recetas" parent="recetas.menu_2"
-              action="recetas.action_server"/>
--->
+
   </data>
 </odoo>
