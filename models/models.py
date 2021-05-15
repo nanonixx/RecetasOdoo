@@ -20,8 +20,13 @@ class recetas(models.Model):
     vegano = fields.Boolean()
     celiaco = fields.Boolean()
     
+     
+    image = fields.Image()
     dateAdded = fields.Date()
     #Imagen?
+
+    ingredientes = fields.Text()
+    anotaciones = fields.Text()
 
 #
 #     @api.depends('value')

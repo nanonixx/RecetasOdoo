@@ -26,17 +26,31 @@
             <group>
               <separator string="Datos generales" colspan="2"/>
                 <field name="name" string="Nom" required="1"/>
+                <field name="image" string="Imagen" widget='image' required="1" options='{"size": [40, 40]}'/>
                 <field name="description" string="Descripcion" required="1"/>
                 <field name="dateAdded" string="Añadido el" required="1"/>
             </group>
 
             <group>
               <separator string="Detalles" colspan="2"/>
-                <field name="name" string="Nom" required="1"/>
+                <field name="time" string="Tiempo de preparado" required="1"/>
                 <field name="steps" string="Pasos a seguir" required="1"/>
                 <field name="vegano" string="Vegano" required="1"/>
                 <field name="celiaco" string="Celíaco" required="1"/>
             </group>
+            
+
+             <notebook colspan="2">
+
+              <page string="Ingredientes">
+                <field name="ingredientes"/>
+              </page>  
+
+              <page string="Anotaciones">
+                <field name="anotaciones"/>
+              </page> 
+
+            </notebook>
 
           </group>
         </sheet>
