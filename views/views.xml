@@ -29,7 +29,7 @@
                 <field name="image" string="Imagen" widget='image' required="1" options='{"size": [40, 40]}'/>
                 <field name="description" string="Descripcion" required="1"/>
                 <field name="dateAdded" string="Añadido el" required="1"/>
-                <field name="id" string="ID" required="1"/>
+                <field name="id" string="ID"/>
             </group>
 
             <group>
@@ -45,7 +45,14 @@
              <notebook colspan="2">
 
               <page string="Ingredientes">
-                <field name="ingredientes"/>
+                <field name="ingredientes">
+                  <tree>
+                    <field name = "nameIng" string="name"/>
+                    <field name = "idIng" string="ID"/>
+                    <field name = "categoria" string="Categoria"/>
+                    <field name = "proveedor" string="Proveedor"/>
+                  </tree>
+                  </field>
               </page>  
 
               <page string="Anotaciones">
@@ -59,7 +66,7 @@
       </form>
     </field>
   </record>
-
+<!--
 <record model="ir.ui.view" id="ingredientes.list">
       <field name="name">ingredienteslist</field>
       <field name="model">recetas.ingredientes</field>
@@ -69,7 +76,8 @@
           <field name="id"/>
         </tree>
       </field>
-    </record>
+</record>
+-->
 
    <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="recetas.action_window">
@@ -78,11 +86,11 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-     <record model="ir.actions.act_window" id="ingredientes.action_window">
+     <!-- <record model="ir.actions.act_window" id="ingredientes.action_window">
       <field name="name">Ingredientingos</field>
       <field name="res_model">recetas.ingredientes</field>
       <field name="view_mode">tree,form</field>
-    </record>
+    </record> -->
 
     <!-- server action to the one above -->
 <!--
@@ -113,11 +121,5 @@
 
     <menuitem name="Lista de recetas" id="recetas.menu_1_list" parent="recetas.menu_1"
               action="recetas.action_window"/>
-     <menuitem name="Ingredientes" id="recetas.menu_2_list" parent="recetas.menu_2"
-              action="ingredientes.action_window"/>
-              
-
-              
-
   </data>
 </odoo>
