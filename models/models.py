@@ -4,10 +4,10 @@ from odoo import models, fields, api
 
 
 class recetas(models.Model):
-    _name = 'recetas.recetas'
+    _name = 'recetas'
 #     _description = 'recetas.recetas'
 
-    name = fields.Char()
+    nameRec = fields.Char()
     id = fields.Char()
     dificultad = fields.Char()
 
@@ -26,13 +26,13 @@ class recetas(models.Model):
     #Imagen?
 
     # ingredientes = fields.Text()
-    ingredientes = fields.One2many("recetas.ingredientes", "name", string="Ingredientes")
+    ingredientes = fields.One2many("ingredientes", "nameIng", string="Ingredientes")
     anotaciones = fields.Text()
 
 class ingredientes(models.Model):
-    _name = 'recetas.ingredientes'
+    _name = 'ingredientes'
 
-    nameIng = fields.Many2one("recetas.recetas", "ingredientes")
+    nameIng = fields.Char()
     # name = fields.Char()
     idIng = fields.Char()
     categoria=fields.Char()
