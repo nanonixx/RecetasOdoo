@@ -1,24 +1,37 @@
 <odoo>
     <data>
-<!--
-        <template id="listing">
-          <ul>
-            <li t-foreach="objects" t-as="object">
-              <a t-attf-href="#{ root }/objects/#{ object.id }">
-                <t t-esc="object.display_name"/>
-              </a>
-            </li>
-          </ul>
+        <template id="report_recetas_view">
+         <t t-call="web.html_container">
+              <t t-foreach="docs" t-as="doc">
+                      <t t-call="web.external_layout">           
+                          <div class="page">
+                              <h2>Recetas de Namoi</h2>
+                              <p>Nombre: <span t-field="doc.nameRec"/></p>
+                              <p>ID: <span t-field="doc.id"/></p>     
+                              <p>Dificultad: <span t-field="doc.ificultad"/></p> 
+                              <p>Tiempo de preparación: <span t-field="doc.time"/></p> 
+                              <p><img t-attf-src="data:image/jpg;base64,{{doc.image}}" style="align:left; width:100px;height:100px;"/></p> 
+                              <p>Descripcion: <span t-field="doc.description"/></p>    
+                              <p>Pasos a seguir: <span t-field="doc.steps"/></p>       
+                              <p>Vegano: <span t-field="doc.vegano"/></p>              
+                              <p>Celíaco: <span t-field="doc.celiaco"/></p>  
+                              <p>Añadido el: <span t-field="doc.dateAdded"/></p>  
+                              <p>Anotaciones: <span t-field="doc.anotaciones"/></p>
+
+                              <h3>Ingredientes</h3>
+                                <t for-each="doc.ingredientes" t-as="ingredientes">
+                                <p>Nombre: <span t-field="ingredientes.nameIng"/></p>  
+                                <p>ID: <span t-field="ingredientes.idIng"/></p> 
+                                <p>Categoria: <span t-field="ingredientes.categoria"/></p> 
+                                <p>Proovedor: <span t-field="ingredientes.proveedor"/></p> 
+                                </t>  
+                                                                                                                
+                          </div>
+                      </t>
+                  </t>
+              </t>
+
         </template>
-        <template id="object">
-          <h1><t t-esc="object.display_name"/></h1>
-          <dl>
-            <t t-foreach="object._fields" t-as="field">
-              <dt><t t-esc="field"/></dt>
-              <dd><t t-esc="object[field]"/></dd>
-            </t>
-          </dl>
-        </template>
--->
+
     </data>
 </odoo>
