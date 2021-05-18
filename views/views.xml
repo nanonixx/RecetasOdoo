@@ -2,12 +2,12 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="recetas.list">
+    <record model="ir.ui.view" id="list">
       <field name="name">recetaslist</field>
-      <field name="model">recetas.recetas</field>
+      <field name="model">recetas</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
+          <field name="nameRec"/>
           <field name="id"/>
           <field name="dificultad"/>
           <field name="time"/>
@@ -15,9 +15,9 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="recetas.view_form_recetas">
+    <record model="ir.ui.view" id="view_form_recetas">
       <field name="name">Recetingas</field>
-      <field name="model">recetas.recetas</field>
+      <field name="model">recetas</field>
       <field name="arch" type="xml">
       <form string="Recetas formulario">
         <sheet>
@@ -25,7 +25,7 @@
 
             <group>
               <separator string="Datos generales" colspan="2"/>
-                <field name="name" string="Nom" required="1"/>
+                <field name="nameRec" string="Nom" required="1"/>
                 <field name="image" string="Imagen" widget='image' required="1" options='{"size": [40, 40]}'/>
                 <field name="description" string="Descripcion" required="1"/>
                 <field name="dateAdded" string="Añadido el" required="1"/>
@@ -47,7 +47,7 @@
               <page string="Ingredientes">
                 <field name="ingredientes">
                   <tree>
-                    <field name = "nameIng" string="name"/>
+                    <field name = "nameIng" string="Nom ingredient"/>
                     <field name = "idIng" string="ID"/>
                     <field name = "categoria" string="Categoria"/>
                     <field name = "proveedor" string="Proveedor"/>
@@ -66,8 +66,8 @@
       </form>
     </field>
   </record>
-<!--
-<record model="ir.ui.view" id="ingredientes.list">
+
+<!-- <record model="ir.ui.view" id="list">
       <field name="name">ingredienteslist</field>
       <field name="model">recetas.ingredientes</field>
       <field name="arch" type="xml">
@@ -77,20 +77,20 @@
         </tree>
       </field>
 </record>
--->
+ -->
 
    <!-- actions opening views on models -->
-    <record model="ir.actions.act_window" id="recetas.action_window">
+    <record model="ir.actions.act_window" id="action_window">
       <field name="name">Recetingas</field>
-      <field name="res_model">recetas.recetas</field>
+      <field name="res_model">recetas</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-     <!-- <record model="ir.actions.act_window" id="ingredientes.action_window">
+     <record model="ir.actions.act_window" id="action_window2">
       <field name="name">Ingredientingos</field>
-      <field name="res_model">recetas.ingredientes</field>
+      <field name="res_model">ingredientes</field>
       <field name="view_mode">tree,form</field>
-    </record> -->
+    </record>
 
     <!-- server action to the one above -->
 <!--
@@ -110,16 +110,18 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="Cosas de recetas" id="recetas.menu_root"/>
+    <menuitem name="Cosas de recetas" id="menu_root"/>
 
     <!-- menu categories -->
 
-    <menuitem name="Recetas" id="recetas.menu_1" parent="recetas.menu_root"/>
-    <menuitem name="Ingredientes" id="recetas.menu_2" parent="recetas.menu_root"/>
+    <menuitem name="Recetas" id="menu_1" parent="menu_root"/>
+    <menuitem name="Ingredientes" id="menu_2" parent="menu_root"/>
 
     <!-- actions -->
 
-    <menuitem name="Lista de recetas" id="recetas.menu_1_list" parent="recetas.menu_1"
-              action="recetas.action_window"/>
+    <menuitem name="Lista de recetas" id="menu_1_list" parent="menu_1"
+              action="action_window"/>
+    <menuitem name="Lista de ingredientes" id="menu_2_list" parent="menu_2"
+              action="action_window2"/>
   </data>
 </odoo>
