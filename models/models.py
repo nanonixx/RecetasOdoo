@@ -26,13 +26,14 @@ class recetas(models.Model):
     #Imagen?
 
     # ingredientes = fields.Text()
-    ingredientes = fields.One2many("ingredientes", "nameIng", string="Ingredientes")
+    ingredientes = fields.One2many("ingredientes", "ingredientesRelacion", string="Ingredientes")
     anotaciones = fields.Text()
 
 class ingredientes(models.Model):
     _name = 'ingredientes'
 
     nameIng = fields.Char()
+    ingredientesRelacion = fields.Many2one('recetas', 'Ingredientes')
     # name = fields.Char()
     idIng = fields.Char()
     categoria=fields.Char()
