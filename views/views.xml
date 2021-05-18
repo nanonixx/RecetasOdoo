@@ -67,17 +67,43 @@
     </field>
   </record>
 
-<!-- <record model="ir.ui.view" id="list">
+<record model="ir.ui.view" id="ingredientes">
       <field name="name">ingredienteslist</field>
-      <field name="model">recetas.ingredientes</field>
+      <field name="model">ingredientes</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
+          <field name="nameIng"/>
           <field name="id"/>
+          <field name="proveedor"/>
+          <field name="categoria"/>
         </tree>
       </field>
 </record>
- -->
+
+<record model="ir.ui.view" id="view_form_ingredientes">
+      <field name="name">Ingredientingos</field>
+      <field name="model">ingredientes</field>
+      <field name="arch" type="xml">
+      <form string="Ingredientes formulario">
+        <sheet>
+          <group colspan="1">
+
+            <group>
+              <separator string="Datos generales" colspan="2"/>
+                <field name="nameIng" string="Nom"/>
+                <field name="idIng" string="ID"/>
+                <field name="proveedor" string="Proveedor"/>
+                <field name="categoria" string="Categoria"/>
+
+                <field name="ingredientesRelacion" string="Relacion"/>
+            </group>
+            
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
 
    <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="action_window">
